@@ -1,8 +1,26 @@
 /*
-torus topology
-heat damage nerf
-not all weapons
+This is "Dogfights in Space", a simple asteroids-style game in Processing, 
+for two players to shoot each other and have fun. (or possibly do things together?)
+The Gear system actually grew to be pretty neat. I've created quite a few fun weapons.
+There's a seeker missile, for example, which was fun to make, but not very fun gameplaywise.
 
+TO ACTUALLY PLAY THE GAME, unless you have the same two multilaser gamepads I have,
+you're going to have to comment out these lines:
+  P1.gpad_controls( 0 );
+  P2.gpad_controls( 1 );
+in draw, and uncomment everything in keyPressed() and keyReleased().
+also probably take a look at 
+  P1.set_keys(...
+  P2.set_keys(...
+and make yourself a config which makes sense for you, to see what each button does currently,
+take a look at the Vessel constructor, over in the Classes file, and while you're there re-do 
+the load outs for the ships, that one was never really intended as a real loadout, I just 
+crammed everything in there for testing.
+glhf.
+*/
+
+/*
+TO-DO
 [] screen centers on winner after kill
 [] finite matches (i.e. 3 lives each)
 [] menu screen: 
@@ -10,12 +28,14 @@ not all weapons
   [] map: inifinite, torus
   [] select gameplay elements ( asteroids, drops )
   [] control selection
-[]asteroids, crates, neutral|hostile ships
-[] controller support
+[✓] asteroids,
+  [] which drop items
+[✓] controller support
 [] speed boost power, blink
 [] down key = reverse | inertial dampner
 [] fuel injector: huge power gen rate, huge heat
-[] change that awful heat effect to a circular one, or just use blur
+[✓] change that awful heat effect to a circular one, or just use blur
+[] neutral|hostile ships
 */
 
 import org.gamecontrolplus.gui.*;
