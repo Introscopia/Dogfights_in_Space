@@ -6,6 +6,9 @@ There's a seeker missile, for example, which was fun to make, but not very fun g
 
 TO ACTUALLY PLAY THE GAME, unless you have the same two multilaser gamepads I have,
 you're going to have to comment out these lines:
+  gpad1 = control.getDevice(...
+  gpad2 = control.getDevice(...
+in setup, and these:
   P1.gpad_controls( 0 );
   P2.gpad_controls( 1 );
 in draw, and uncomment everything in keyPressed() and keyReleased().
@@ -28,13 +31,14 @@ TO-DO
   [] map: inifinite, torus
   [] select gameplay elements ( asteroids, drops )
   [] control selection
-[✓] asteroids,
+[x] asteroids,
+  [] with actual decent physics. Use Fisica lib?
   [] which drop items
-[✓] controller support
+[x] controller support
 [] speed boost power, blink
 [] down key = reverse | inertial dampner
 [] fuel injector: huge power gen rate, huge heat
-[✓] change that awful heat effect to a circular one, or just use blur
+[x] change that awful heat effect to a circular one, or just use blur
 [] neutral|hostile ships
 */
 
@@ -110,6 +114,8 @@ void setup(){
   control = ControlIO.getInstance(this);
   
   gpad1 = control.getDevice("USB Joystick          ");
+  gpad2 = control.getDevice("4 eixos e 13 botões em um(a) gamepad com botão de ângulo de visão");
+
   
   if (gpad1 == null) {
     println("No suitable device configured");
